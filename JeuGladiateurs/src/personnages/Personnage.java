@@ -2,32 +2,83 @@ package personnages;
 
 public class Personnage {
 
+    private String nom;
+    private int pointsDeVie;
+    private int valeurMaxAttaque;
+    private int valeurDefense;
+    private int initiative;
+
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
+    //CONSTRUCTEUR
+    
+        public Personnage(String nom, int pointsDeVie, int valeurMaxAttaque, int valeurDefense, int initiative) {
+        this.nom = nom;
+        this.pointsDeVie = pointsDeVie;
+        this.valeurMaxAttaque = valeurMaxAttaque;
+        this.valeurDefense = valeurDefense;
+        this.initiative = initiative;
+    }
+
+    public Personnage() {
+        nom = "";
+        pointsDeVie = 0;
+        valeurMaxAttaque = 0;
+        valeurDefense = 0;
+        initiative = 0;
+    }
+    
+    // **************************************************************************
+    // **************************************************************************
+    // **************************************************************************
+    //[GETTER][SETTER]
+    
+    public String getNom() {
+        return nom;
+    }
+
+    public int getPointsDeVie() {
+        return pointsDeVie;
+    }
+
+    public int getValeurMaxAttaque() {
+        return valeurMaxAttaque;
+    }
+
+    public int getValeurDefense() {
+        return valeurDefense;
+    }
+    
+    public int getInitiative() {
+        return initiative;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setPointsDeVie(int pointsDeVie) {
+        this.pointsDeVie = pointsDeVie;
+    }
+
+    public void setValeurMaxAttaque(int valeurMaxAttaque) {
+        this.valeurMaxAttaque = valeurMaxAttaque;
+    }
+
+    public void setValeurDefense(int valeurDefense) {
+        this.valeurDefense = valeurDefense;
+    }
+
+    public void setInitiative(int initiative) {
+        this.initiative = initiative;
+    }
+
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
     // TODO : Mettre vos attributs ici
-    // </editor-fold>
-
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
-    // <editor-fold defaultstate="collapsed" desc="Constructeurs et initialisation">
-    public Personnage(String nom, int attaqueMax, int defense, int pvs, int ini) {
-        // TODO : Constructeur AVEC paramètres
-    }
-
-    public Personnage() {
-        // TODO : Constructeur SANS paramètres qui initialise à ZÉRO ou à ""
-    }
-    // </editor-fold>
-
-    // **************************************************************************
-    // **************************************************************************
-    // **************************************************************************
-    // <editor-fold defaultstate="collapsed" desc="Getters et setters">
-    // TODO : Les getters
-    // TODO : Les setters
     // </editor-fold>
 
     // **************************************************************************

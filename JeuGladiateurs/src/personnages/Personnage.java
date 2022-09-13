@@ -2,12 +2,6 @@ package personnages;
 
 public class Personnage {
 
-    private String nom;
-    private int pointsDeVie;
-    private int valeurMaxAttaque;
-    private int valeurDefense;
-    private int initiative;
-
     // **************************************************************************
     // **************************************************************************
     // **************************************************************************
@@ -78,7 +72,11 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Attributs">
-    // TODO : Mettre vos attributs ici
+    private String nom;
+    private int pointsDeVie;
+    private int valeurMaxAttaque;
+    private int valeurDefense;
+    private int initiative;
     // </editor-fold>
 
     // **************************************************************************

@@ -129,4 +129,20 @@ public class Personnage {
         
     }
     // </editor-fold>
+    
+        public void setActiveFighter(Personnage cible) {
+           nom = cible.nom;
+           pointsDeVie = cible.pointsDeVie;
+           valeurDefense = cible.valeurDefense;
+           valeurMaxAttaque = cible.valeurMaxAttaque;
+           initiative = cible.initiative;
+        
+    }
+    // </editor-fold>
+        
+        public void setActiveFighterB(Personnage cible) {
+
+        
+    }
+    // </editor-fold>
 }

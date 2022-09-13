@@ -86,7 +86,19 @@ public class Personnage {
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
     public void afficherInfosPersonnage() {
-        // TODO : Afficher les infos du personnage, tel que montré dans l'énoncé
+        System.out.println("\n" + getNom());
+        System.out.println("Attaque : " + getValeurMaxAttaque());
+        System.out.println("Defense : " + getValeurDefense());
+        System.out.println("Points de vie : " + getPointsDeVie());
+        System.out.println("Iniciative : " + getInitiative());
+        if (getPointsDeVie() > 0) {
+            System.out.println("Statut : Vivant");
+        }
+        else
+        {
+            System.out.println("Statut s: Mort");
+        }
+        
     }
 
     private int attaqueCalcul() {

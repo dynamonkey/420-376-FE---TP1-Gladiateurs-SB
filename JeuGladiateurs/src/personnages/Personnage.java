@@ -90,7 +90,7 @@ public class Personnage {
         System.out.println("Attaque : " + getValeurMaxAttaque());
         System.out.println("Defense : " + getValeurDefense());
         System.out.println("Points de vie : " + getPointsDeVie());
-        System.out.println("Iniciative : " + getInitiative());
+        System.out.println("Initiative : " + getInitiative());
         if (getPointsDeVie() > 0) {
             System.out.println("Statut : Vivant");
         }
@@ -121,7 +121,12 @@ public class Personnage {
     }
 
     public void setNewInitiativeRandom() {
-        // TODO : Modifier de façon aléatoire la valeur INI du personnage.
+         Random rand = new Random();
+        int minValue = 0;
+        int maxValue = 100;
+        int nombreAleatoire = rand.nextInt(maxValue - minValue) + minValue;
+        setInitiative(nombreAleatoire);
+        
     }
     // </editor-fold>
 }

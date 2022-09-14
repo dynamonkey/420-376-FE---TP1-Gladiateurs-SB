@@ -39,6 +39,7 @@ public class JeuGladiateurs {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
+    int fin = 0;
     do {    
         tour.afficheTour();
         int ini1 = personnageA.getInitiative();
@@ -51,16 +52,33 @@ public class JeuGladiateurs {
                     personnageB.frapperPersonnage(personnageA);
                 }
             }
-        if (personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
             affichage.afficherSeparateurInfosPerso();
             personnageA.setNewInitiativeRandom();
             personnageB.setNewInitiativeRandom();
             personnageA.afficherInfosPersonnage();
             personnageB.afficherInfosPersonnage();
+            
+        if (personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+            tour.augmenteTour();
+            affichage.afficherSeparateurDeTour();
         }
-        tour.augmenteTour();
-        affichage.afficherSeparateurDeTour();
-    } while (Personnage.getWin());    
+        if (personnageA.getPointsDeVie() <= 0) {
+            fin = 1;
+        }
+        if (personnageB.getPointsDeVie() <= 0) {
+            fin = 2;
+        }
+    } while (fin == 0);
+    System.out.println("");
+    affichage.afficherSeparateurDeTour();
+    System.out.println("");
+        if (fin == 1) {
+            System.out.println(personnageB.getNom() + " est le gagnant du combat!");
+        }
+        if (fin == 2) {
+            System.out.println(personnageA.getNom() + " est le gagnant du combat!");
+        }
+    
     // TODO : Après la boucle, afficher le résultat du combat
     // </editor-fold>
     }

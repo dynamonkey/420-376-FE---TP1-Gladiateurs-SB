@@ -1,6 +1,7 @@
 package personnages;
 
 import java.util.Random;
+import java.util.Set;
 
 public class Personnage {
 
@@ -50,9 +51,6 @@ public class Personnage {
         return initiative;
     }
     
-    public Boolean getWin(){
-        return win;
-    }
 
     public void setNom(String nom) {
         this.nom = nom;
@@ -74,10 +72,6 @@ public class Personnage {
     public void setInitiative(int initiative) {
         this.initiative = initiative;
     }
-    
-    public void setWin(Boolean win){
-        this.win = win;
-    }
 
     // **************************************************************************
     // **************************************************************************
@@ -88,7 +82,6 @@ public class Personnage {
     private int valeurMaxAttaque;
     private int valeurDefense;
     private int initiative;
-    private Boolean win;
     // </editor-fold>
 
     // **************************************************************************
@@ -106,7 +99,7 @@ public class Personnage {
         }
         else
         {
-            System.out.println("Statut s: Mort");
+            System.out.println("Statut : Mort");
         }
         
     }
@@ -126,6 +119,10 @@ public class Personnage {
             degats = 0;
         }
         personnageCible.setPointsDeVie(personnageCible.pointsDeVie - degats);
+        if (personnageCible.getPointsDeVie() < 0) {
+            personnageCible.setPointsDeVie(0);
+            
+        }
         System.out.println("\n" + getNom() + " attaque avec une puissance de : " + frappe);
         System.out.println(personnageCible.getNom() + " a une defense de:  " + personnageCible.getValeurDefense());
         System.out.println("Les degats sont donc de : " + degats);
@@ -149,12 +146,5 @@ public class Personnage {
            initiative = cible.initiative;
         
     }
-    // </editor-fold>
-        
-    public void getWinner() {
-            
-        
-    }
-    // </editor-fold>
         
 }

@@ -49,10 +49,15 @@ public class Personnage {
     public int getInitiative() {
         return initiative;
     }
+    
+    public Boolean getWin(){
+        return win;
+    }
 
     public void setNom(String nom) {
         this.nom = nom;
     }
+    
 
     public void setPointsDeVie(int pointsDeVie) {
         this.pointsDeVie = pointsDeVie;
@@ -69,6 +74,10 @@ public class Personnage {
     public void setInitiative(int initiative) {
         this.initiative = initiative;
     }
+    
+    public void setWin(Boolean win){
+        this.win = win;
+    }
 
     // **************************************************************************
     // **************************************************************************
@@ -79,6 +88,7 @@ public class Personnage {
     private int valeurMaxAttaque;
     private int valeurDefense;
     private int initiative;
+    private Boolean win;
     // </editor-fold>
 
     // **************************************************************************
@@ -115,6 +125,7 @@ public class Personnage {
         if (degats < 0) {
             degats = 0;
         }
+        personnageCible.setPointsDeVie(personnageCible.pointsDeVie - degats);
         System.out.println("\n" + getNom() + " attaque avec une puissance de : " + frappe);
         System.out.println(personnageCible.getNom() + " a une defense de:  " + personnageCible.getValeurDefense());
         System.out.println("Les degats sont donc de : " + degats);
@@ -130,7 +141,7 @@ public class Personnage {
     }
     // </editor-fold>
     
-        public void setActiveFighter(Personnage cible) {
+    public void setActiveFighter(Personnage cible) {
            nom = cible.nom;
            pointsDeVie = cible.pointsDeVie;
            valeurDefense = cible.valeurDefense;
@@ -140,9 +151,10 @@ public class Personnage {
     }
     // </editor-fold>
         
-        public void setActiveFighterB(Personnage cible) {
-
+    public void getWinner() {
+            
         
     }
     // </editor-fold>
+        
 }

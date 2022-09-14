@@ -39,19 +39,28 @@ public class JeuGladiateurs {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de combat">
-    tour.afficheTour();
-    personnageA.setNewInitiativeRandom();
-    personnageB.setNewInitiativeRandom();
-    int ini1 = personnage1.getInitiative();
-    int ini2 = personnage2.getInitiative();
-        for (int i = 100; i != 0; i--) {
-            if (i == ini1) {
-                personnageA.frapperPersonnage(personnageB);
+    do {    
+        tour.afficheTour();
+        int ini1 = personnageA.getInitiative();
+        int ini2 = personnageB.getInitiative();
+            for (int i = 100; i > 0; i--) {
+                if (i == ini1 && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+                    personnageA.frapperPersonnage(personnageB);
+                }
+                if (i == ini2 && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+                    personnageB.frapperPersonnage(personnageA);
+                }
             }
-            else if (i == ini2) {
-                personnageB.frapperPersonnage(personnageA);
-            }
+        if (personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+            affichage.afficherSeparateurInfosPerso();
+            personnageA.setNewInitiativeRandom();
+            personnageB.setNewInitiativeRandom();
+            personnageA.afficherInfosPersonnage();
+            personnageB.afficherInfosPersonnage();
         }
+        tour.augmenteTour();
+        affichage.afficherSeparateurDeTour();
+    } while (Personnage.getWin());    
     // TODO : Après la boucle, afficher le résultat du combat
     // </editor-fold>
     }

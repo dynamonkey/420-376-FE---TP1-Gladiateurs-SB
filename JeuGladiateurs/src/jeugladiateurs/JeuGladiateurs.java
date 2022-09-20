@@ -42,13 +42,11 @@ public class JeuGladiateurs {
     int fin = 0;
     do {    
         tour.afficheTour();
-        int ini1 = personnageA.getInitiative();
-        int ini2 = personnageB.getInitiative();
             for (int i = 100; i > 0; i--) {
-                if (i == ini1 && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+                if (i == personnageA.getInitiative() && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
                     personnageA.frapperPersonnage(personnageB);
                 }
-                if (i == ini2 && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
+                if (i == personnageB.getInitiative() && personnageA.getPointsDeVie() > 0 && personnageB.getPointsDeVie() > 0) {
                     personnageB.frapperPersonnage(personnageA);
                 }
             }
@@ -72,14 +70,8 @@ public class JeuGladiateurs {
     System.out.println("");
     affichage.afficherSeparateurDeTour();
     System.out.println("");
-        if (fin == 1) {
-            System.out.println(personnageB.getNom() + " est le gagnant du combat!");
-        }
-        if (fin == 2) {
-            System.out.println(personnageA.getNom() + " est le gagnant du combat!");
-        }
     
-    // TODO : Après la boucle, afficher le résultat du combat
+    affichage.afficheVictoire(personnageA, personnageB);
     // </editor-fold>
     }
 

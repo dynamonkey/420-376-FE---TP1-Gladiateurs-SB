@@ -24,8 +24,13 @@ public class AffichageEcran {
         System.out.println("-----------------");
     }
 
-    public void afficheVictoire(Personnage personnage1, Personnage personnage2) {
-        // TODO : Afficher le gagnant du combat, tel que montré dans l'énoncé
+    public void afficheVictoire(Personnage personnageA, Personnage personnageB) {
+        if (personnageA.getPointsDeVie() > 0) {
+            System.out.println(personnageA.getNom() + "gagne le combat!!!");
+        }
+        else{
+            System.out.println(personnageB.getNom() + " gagne le combat!!!");
+        }
     }
     // </editor-fold>
 }

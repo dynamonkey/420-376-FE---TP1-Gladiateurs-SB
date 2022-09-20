@@ -10,7 +10,7 @@ public class Personnage {
     // **************************************************************************
     //CONSTRUCTEUR
     
-        public Personnage(String nom, int pointsDeVie, int valeurMaxAttaque, int valeurDefense, int initiative) {
+    public Personnage(String nom, int pointsDeVie, int valeurMaxAttaque, int valeurDefense, int initiative) {
         this.nom = nom;
         this.pointsDeVie = pointsDeVie;
         this.valeurMaxAttaque = valeurMaxAttaque;
@@ -25,6 +25,7 @@ public class Personnage {
         valeurDefense = 0;
         initiative = 0;
     }
+    
     
     // **************************************************************************
     // **************************************************************************
@@ -88,6 +89,8 @@ public class Personnage {
     // **************************************************************************
     // **************************************************************************
     // <editor-fold defaultstate="collapsed" desc="Mécanique de jeu">
+
+
     public void afficherInfosPersonnage() {
         System.out.println("\n" + getNom());
         System.out.println("Attaque : " + getValeurMaxAttaque());
@@ -138,13 +141,12 @@ public class Personnage {
     }
     // </editor-fold>
     
-    public void setActiveFighter(Personnage cible) {
-           nom = cible.nom;
-           pointsDeVie = cible.pointsDeVie;
-           valeurDefense = cible.valeurDefense;
-           valeurMaxAttaque = cible.valeurMaxAttaque;
-           initiative = cible.initiative;
-        
-    }
+   // public void setActiveFighter(Personnage cible) {
+   //        nom = cible.nom;
+   //        pointsDeVie = cible.pointsDeVie;
+   //        valeurDefense = cible.valeurDefense;
+   //        valeurMaxAttaque = cible.valeurMaxAttaque;
+   //        initiative = cible.initiative;
+   // }
         
 }

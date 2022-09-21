@@ -26,7 +26,7 @@ public class AffichageEcran {
 
     public void afficheVictoire(Personnage personnageA, Personnage personnageB) {
         if (personnageA.getPointsDeVie() > 0) {
-            System.out.println(personnageA.getNom() + "gagne le combat!!!");
+            System.out.println(personnageA.getNom() + " gagne le combat!!!");
         }
         else{
             System.out.println(personnageB.getNom() + " gagne le combat!!!");

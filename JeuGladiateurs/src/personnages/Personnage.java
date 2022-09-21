@@ -139,6 +139,8 @@ public class Personnage {
         setInitiative(nombreAleatoire);
         
     }
+    
+    
     // </editor-fold>
     
    // public void setActiveFighter(Personnage cible) {
